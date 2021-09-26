@@ -47,6 +47,7 @@ body {
 .modal-footer button {
   background-color: #008899;
   border: 1px solid #fff;
+  color: #fff;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 0.8rem;
