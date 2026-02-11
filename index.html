@@ -42,9 +42,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
-    <script>
-      VANTA.CLOUDS({ el: '#vantasjs' });
-    </script>
   </head>
   <body>
     <div class="container">
@@ -183,5 +180,16 @@
     <script src="weather.js"></script>
     <script src="ui.js"></script>
     <script src="script.js"></script>
+    <script>
+      // Initialize Vanta.js after DOM is ready
+      VANTA.CLOUDS({
+        el: '#vantasjs',
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0
+      });
+    </script>
   </body>
 </html>

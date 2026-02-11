@@ -22,6 +22,17 @@ body {
   z-index: -10;
 }
 
+/* Ensure Vanta canvas stays behind content */
+#vantasjs canvas,
+.vanta-canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: -10 !important;
+}
+
 .container {
   position: relative;
   z-index: 10;
