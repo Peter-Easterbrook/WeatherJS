@@ -3,7 +3,7 @@ class Storage {
     this.city;
     this.country;
     this.defaultCity = 'Vienna';
-    this.defaultState = 'Austria';
+    this.defaultCountry = 'Austria';
   }
 
   getLocationData() {
@@ -14,18 +14,18 @@ class Storage {
     }
 
     if (localStorage.getItem('country') === null) {
-      this.state = this.defaultState;
+      this.country = this.defaultCountry;
     } else {
-      this.state = localStorage.getItem('country');
+      this.country = localStorage.getItem('country');
     }
 
     return {
       city: this.city,
-      state: this.country,
+      country: this.country,
     };
   }
 
-  setLocationData(city, state) {
+  setLocationData(city, country) {
     localStorage.setItem('city', city);
     localStorage.setItem('country', country);
   }

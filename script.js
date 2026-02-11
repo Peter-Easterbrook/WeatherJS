@@ -28,11 +28,12 @@ document.getElementById('w-change-btn').addEventListener('click', (e) => {
   $('#locModal').modal('hide');
 });
 
-function getWeather() {
-  weather
-    .getWeather()
-    .then((results) => {
-      ui.paint(results);
-    })
-    .catch((err) => console.log(err));
+async function getWeather() {
+  try {
+    const results = await weather.getWeather();
+    ui.paint(results);
+  } catch (err) {
+    console.error('Failed to fetch weather:', err);
+    ui.paint({ cod: 'error', message: 'Failed to fetch weather data' });
+  }
 }

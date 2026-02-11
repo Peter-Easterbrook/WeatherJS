@@ -4,22 +4,103 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   font-family: 'Raleway', sans-serif;
-  display: flex;
   min-height: 100vh;
   margin: 0;
+  overflow-x: hidden;
 }
+
+/* Fixed background that doesn't scroll */
+#vantasjs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
 .container {
-  margin-top: 6rem;
+  position: relative;
+  z-index: 1;
+  padding: 2rem 15px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* Responsive typography */
 .container h1 {
-  font-size: 4rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 400;
+  word-break: break-word;
+  margin-bottom: 0.25rem;
 }
 .container h3 {
-  font-size: 2rem;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
   font-weight: 400;
+}
+
+/* Weather card */
+.weather-card {
+  width: 100%;
+  max-width: 450px;
+  padding: 1.5rem 1rem;
+}
+
+/* Weather details grid */
+.weather-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.weather-grid .detail-item {
+  background-color: #006572;
+  padding: 0.75rem 0.5rem;
+  border-radius: 5px;
+  font-size: 0.85rem;
+}
+
+.weather-grid .detail-item.full-width {
+  grid-column: 1 / -1;
+}
+
+.detail-label {
+  font-size: 0.7rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.detail-value {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media (min-width: 576px) {
+  .weather-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .weather-grid .detail-item {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .weather-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .weather-grid .detail-item.full-width {
+    grid-column: 1;
+  }
 }
 
 .container ul li {

@@ -48,17 +48,51 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-md-6 mx-auto text-center bg-info mt-5 p-5 rounded">
+      <div class="row justify-content-center w-100">
+        <div class="text-center bg-info rounded weather-card text-light">
           <h1 id="w-location"></h1>
           <h3 class="text-dark" id="w-desc"></h3>
-          <h3 id="w-string"></h3>
-          <img id="w-icon" />
-          <ul id="w-details" class="list-group mt-3 bg-info">
-            <li class="list-group-item text-light mx-5" id="w-humidity"></li>
-
-            <li class="list-group-item text-light mx-5" id="w-wind"></li>
-          </ul>
+          <div class="d-flex align-items-center justify-content-center">
+            <img id="w-icon" alt="Weather icon" />
+            <h2 id="w-string" class="mb-0"></h2>
+          </div>
+          <p id="w-feels" class="mb-2"></p>
+          
+          <div class="weather-grid text-light">
+            <div class="detail-item">
+              <div class="detail-label">Min / Max</div>
+              <div class="detail-value" id="w-minmax"></div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Humidity</div>
+              <div class="detail-value" id="w-humidity"></div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Wind</div>
+              <div class="detail-value" id="w-wind"></div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Pressure</div>
+              <div class="detail-value" id="w-pressure"></div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Visibility</div>
+              <div class="detail-value" id="w-visibility"></div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Clouds</div>
+              <div class="detail-value" id="w-clouds"></div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Sunrise</div>
+              <div class="detail-value" id="w-sunrise"></div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Sunset</div>
+              <div class="detail-value" id="w-sunset"></div>
+            </div>
+          </div>
+          
           <hr />
           <button
             type="button"
